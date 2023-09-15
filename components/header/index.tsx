@@ -63,8 +63,8 @@ export default function Header() {
             : ""
         }`}
       >
-        <div className="container mx-auto flex justify-between p-2">
-          <ul className="flex items-center space-x-8 text-gray-700 font-bold">
+        <div className="container mx-auto flex justify-between p-2 text-gray-700 font-bold">
+          <ul className="flex items-center space-x-8">
             <li>
               <Link
                 href={"#"}
@@ -141,6 +141,11 @@ export default function Header() {
               </Link>
             </li>
           </ul>
+          <div className="flex items-center space-x-4">
+            <Link href={"#"} className="hover:text-gray-900">
+              Login
+            </Link>
+          </div>
         </div>
       </nav>
     </>
