@@ -24,7 +24,14 @@ export default function Header() {
     <>
       <header className="p-4 bg-slate-800">
         <div className="container mx-auto flex justify-between items-center">
-          <Image src={"/Logo_cinema.png"} alt="Logo" width={250} height={500} />
+          <Link href={"/"}>
+            <Image
+              src={"/Logo_cinema.png"}
+              alt="Logo"
+              width={250}
+              height={500}
+            />
+          </Link>
           <div className="relative flex items-center">
             <input
               className="border-2 border-gray-300 bg-white h-10 pl-6 rounded-lg text-sm focus:outline-none w-80"
