@@ -8,7 +8,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        birutua: "#112D4E",
+        birumuda: "#3F72AF",
+        hampirbiru: "#DBE2EF",
+        putihb: "#F9F7F7",
+      },
+    },
   },
   plugins: [],
 };
