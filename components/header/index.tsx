@@ -63,12 +63,12 @@ export default function Header() {
             : ""
         }`}
       >
-        <div className="container mx-auto flex justify-between p-2 text-gray-700 font-bold">
+        <div className="container mx-auto flex justify-between p-2 text-birutua font-medium">
           <ul className="flex items-center space-x-8">
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@ export default function Header() {
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@ export default function Header() {
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ export default function Header() {
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@ export default function Header() {
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +142,7 @@ export default function Header() {
             </li>
           </ul>
           <div className="flex items-center space-x-4">
-            <Link href={"#"} className="hover:text-gray-900">
+            <Link href={"#"} className="hover:text-birumuda">
               Login
             </Link>
           </div>
