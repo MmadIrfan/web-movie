@@ -22,7 +22,7 @@ export default function Header() {
   }, []);
   return (
     <>
-      <header className="p-4 bg-slate-800">
+      <header className="p-2 bg-birutua">
         <div className="container mx-auto flex justify-between items-center">
           <Link href={"/"}>
             <Image
