@@ -7,7 +7,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 85) {
         setIsNavFixed(true);
       } else {
         setIsNavFixed(false);
@@ -22,9 +22,16 @@ export default function Header() {
   }, []);
   return (
     <>
-      <header className="p-4 bg-slate-800">
+      <header className="p-2 bg-birutua">
         <div className="container mx-auto flex justify-between items-center">
-          <Image src={"/Logo_cinema.png"} alt="Logo" width={250} height={500} />
+          <Link href={"/"}>
+            <Image
+              src={"/Logo_cinema.png"}
+              alt="Logo"
+              width={250}
+              height={500}
+            />
+          </Link>
           <div className="relative flex items-center">
             <input
               className="border-2 border-gray-300 bg-white h-10 pl-6 rounded-lg text-sm focus:outline-none w-80"
@@ -41,8 +48,8 @@ export default function Header() {
               className="absolute pl-1 w-5 h-5"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
               />
             </svg>
@@ -56,12 +63,12 @@ export default function Header() {
             : ""
         }`}
       >
-        <div className="container mx-auto flex justify-between p-2">
-          <ul className="flex items-center space-x-8 text-gray-700 font-bold">
+        <div className="container mx-auto flex justify-between p-2 text-birutua font-medium">
+          <ul className="flex items-center space-x-8">
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +83,7 @@ export default function Header() {
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +98,7 @@ export default function Header() {
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +113,7 @@ export default function Header() {
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +128,7 @@ export default function Header() {
             <li>
               <Link
                 href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,6 +141,11 @@ export default function Header() {
               </Link>
             </li>
           </ul>
+          <div className="flex items-center space-x-4">
+            <Link href={"#"} className="hover:text-birumuda">
+              Login
+            </Link>
+          </div>
         </div>
       </nav>
     </>
