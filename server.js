@@ -40,6 +40,7 @@ app.get("/users", (req, res) => {
     res.status(401).json({ message: "Login failed. Invalid credentials." });
   }
 });
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`Server berjalan di port ${port}`);
 });
