@@ -1,5 +1,12 @@
-const express = require('express');
+const express = require("express");
 const app = express();
+const cors = require("cors");
+app.use(cors());
+
+const users = [
+  { id: 1, username: "irfan", password: "password1" },
+  { id: 2, username: "ghina", password: "password2" },
+];
 
 // Data film (contoh)
 const movies = [
@@ -20,7 +27,19 @@ app.get('/api/v2/cineflex/movies', (req, res) => {
   res.json(movies);
 });
 
-const port = process.env.PORT || 3000;
+app.get("/users", (req, res) => {
+  const { username, password } = req.query;
+
+  const user = users.find(
+    (u) => u.username === username && u.password === password
+  );
+
+  if (user) {
+    res.json([user]);
+  } else {
+    res.status(401).json({ message: "Login failed. Invalid credentials." });
+  }
+});
 app.listen(port, () => {
   console.log(`Server berjalan di port ${port}`);
 });
