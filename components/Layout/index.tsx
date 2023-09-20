@@ -10,7 +10,7 @@ export default function Layout(props: LayoutProps) {
   return (
     <>
       <Header />
-      <div>{children}</div>
+      <div className="container mx-auto relative">{children}</div>
       <Footer />
     </>
   );
