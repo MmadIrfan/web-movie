@@ -1,25 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Header() {
-  const [isNavFixed, setIsNavFixed] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 85) {
-        setIsNavFixed(true);
-      } else {
-        setIsNavFixed(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <>
       <header className="p-2 bg-birutua">
@@ -30,6 +12,7 @@ export default function Header() {
               alt="Logo"
               width={250}
               height={500}
+              priority={true}
             />
           </Link>
           <div className="relative flex items-center">
@@ -56,18 +39,12 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <nav
-        className={`p-3 bg-slate-200 ${
-          isNavFixed
-            ? "fixed top-0 w-full transition-all duration-300 ease-in-out"
-            : ""
-        }`}
-      >
+      <nav className="p-3 bg-slate-200 sticky top-0 z-50">
         <div className="container mx-auto flex justify-between p-2 text-birutua font-medium">
           <ul className="flex items-center space-x-8">
             <li>
               <Link
-                href={"#"}
+                href={"/"}
                 className="flex items-center space-x-1 fill-current hover:text-birumuda"
               >
                 <svg
@@ -142,7 +119,7 @@ export default function Header() {
             </li>
           </ul>
           <div className="flex items-center space-x-4">
-            <Link href={"#"} className="hover:text-birumuda">
+            <Link href={"/login"} className="hover:text-birumuda">
               Login
             </Link>
           </div>
