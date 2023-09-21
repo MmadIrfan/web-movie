@@ -1,33 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Header() {
-  const [isNavFixed, setIsNavFixed] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsNavFixed(true);
-      } else {
-        setIsNavFixed(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <>
-      <header className="p-4 bg-slate-800">
+      <header className="p-2 bg-birutua">
         <div className="container mx-auto flex justify-between items-center">
-          <Image src={"/Logo_cinema.png"} alt="Logo" width={250} height={500} />
+          <Link href={"/"}>
+            <Image
+              src={"/Logo_cinema.png"}
+              alt="Logo"
+              width={250}
+              height={500}
+              priority={true}
+            />
+          </Link>
           <div className="relative flex items-center">
             <input
-              className="border-2 border-gray-300 bg-white h-10 pl-6 rounded-lg text-sm focus:outline-none w-80"
+              className="border-2 border-gray-300 bg-white h-10 pl-6 rounded-lg text-sm focus:outline-none w-full md:w-80"
               type="search"
               name="search"
               placeholder="Search teather, movies..."
@@ -41,27 +31,21 @@ export default function Header() {
               className="absolute pl-1 w-5 h-5"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
               />
             </svg>
           </div>
         </div>
       </header>
-      <nav
-        className={`p-3 bg-slate-200 ${
-          isNavFixed
-            ? "fixed top-0 w-full transition-all duration-300 ease-in-out"
-            : ""
-        }`}
-      >
-        <div className="container mx-auto flex justify-between p-2">
-          <ul className="flex items-center space-x-8 text-gray-700 font-bold">
+      <nav className="p-3 bg-slate-200 sticky top-0 z-50">
+        <div className="container mx-auto flex justify-between p-2 text-birutua font-medium">
+          <ul className="flex items-center space-x-8">
             <li>
               <Link
-                href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="nav-link scrollto flex items-center space-x-1 fill-current hover:text-birumuda"
+                href="#nowPlaying"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -75,8 +59,8 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="nav-link scrollto flex items-center space-x-1 fill-current hover:text-birumuda"
+                href={"#upcoming"}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -90,8 +74,8 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="nav-link scrollto flex items-center space-x-1 fill-current hover:text-birumuda"
+                href={"#theaters"}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,8 +89,8 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="nav-link scrollto flex items-center space-x-1 fill-current hover:text-birumuda"
+                href={"#promotions"}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,8 +104,8 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href={"#"}
-                className="flex items-center space-x-1 fill-current hover:text-gray-900"
+                className="nav-link scrollto flex items-center space-x-1 fill-current hover:text-birumuda"
+                href={"#info"}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,6 +118,11 @@ export default function Header() {
               </Link>
             </li>
           </ul>
+          <div className="flex items-center space-x-4">
+            <Link href={"/login"} className="hover:text-birumuda">
+              Login
+            </Link>
+          </div>
         </div>
       </nav>
     </>
