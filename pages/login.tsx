@@ -33,7 +33,7 @@ const Login = () => {
   };
 
   return (
-    <Layout>
+    <Layout judul="Login">
       <div className="container mx-auto flex justify-center items-center h-screen">
         <div className="bg-birutua p-6 rounded-lg shadow-lg w-96">
           <h1 className="text-2xl font-semibold mb-4 text-center text-hampirbiru">

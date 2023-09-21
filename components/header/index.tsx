@@ -17,7 +17,7 @@ export default function Header() {
           </Link>
           <div className="relative flex items-center">
             <input
-              className="border-2 border-gray-300 bg-white h-10 pl-6 rounded-lg text-sm focus:outline-none w-80"
+              className="border-2 border-gray-300 bg-white h-10 pl-6 rounded-lg text-sm focus:outline-none w-full md:w-80"
               type="search"
               name="search"
               placeholder="Search teather, movies..."
