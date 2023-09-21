@@ -4,6 +4,8 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import router from "next/router";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 interface Movie {
   id: number;
@@ -12,17 +14,30 @@ interface Movie {
   label: string;
   categories: string;
 }
+interface Foto {
+  id: number;
+  gambar: string;
+  ke: string;
+  alt: string;
+}
 export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([]);
+  const [foto, setFoto] = useState<Foto[]>([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/movies")
-      .then((response) => {
-        setMovies(response.data);
+    Promise.all([
+      axios.get("http://localhost:3001/movies"),
+      axios.get("http://localhost:3001/foto"),
+    ])
+      .then(([moviesResponse, fotoResponse]) => {
+        const moviesData = moviesResponse.data;
+        const fotoData = fotoResponse.data;
+
+        setMovies(moviesData);
+        setFoto(fotoData);
       })
       .catch((error) => {
-        console.error("Error fetching movies:", error);
+        console.error("Error fetching data:", error);
       });
   }, []);
 
@@ -33,6 +48,28 @@ export default function Home() {
 
   return (
     <Layout judul="Home">
+      <div className="p-6">
+        <Carousel
+          showThumbs={false}
+          showStatus={false}
+          autoPlay={true}
+          interval={2500}
+          transitionTime={800}
+          infiniteLoop={true}
+        >
+          {foto.map((foto) => (
+            <div key={foto.id} onClick={() => router.push(`${foto.ke}`)}>
+              <Image
+                src={`/carousel${foto.gambar}`}
+                alt={foto.alt}
+                width={800}
+                height={400}
+                priority={true}
+              />
+            </div>
+          ))}
+        </Carousel>
+      </div>
       <div className="mt-8">
         <span className="bg-birutua text-putihb px-6 py-2 font-semibold">
           Now Playing
