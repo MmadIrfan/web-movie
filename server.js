@@ -183,6 +183,37 @@ const movies = [
   // Tambahkan lebih banyak data film di sini
 ];
 
+const foto = [
+  {
+    id: 1,
+    gambar: "/c1.jpg",
+    ke: "/detail?id=2",
+    alt: "Expend4bles",
+  },
+  {
+    id: 2,
+    gambar: "/c2.jpg",
+    ke: "/detail?id=6",
+    alt: "Retribution",
+  },
+  {
+    id: 3,
+    gambar: "/c3.jpg",
+    ke: "/detail?id=1",
+    alt: "Kisah Tanah Jawa Pocong Gundul",
+  },
+  {
+    id: 4,
+    gambar: "/c4.jpg",
+    ke: "/detail?id=3",
+    alt: "Satu Hari Dengan Ibu",
+  },
+];
+
+app.get("/foto", (req, res) => {
+  res.json(foto);
+});
+
 app.get("/movies", (req, res) => {
   res.json(movies);
 });
