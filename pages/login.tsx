@@ -7,6 +7,7 @@ import { Router, useRouter } from "next/router";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
   const router = useRouter();
 
   const handleLogin = async (e: SyntheticEvent) => {
@@ -22,13 +23,14 @@ const Login = () => {
 
       const user = response.data[0];
       if (user) {
-        alert(`Selamat Datang ${username}`);
+        setMessage(`Selamat Datang ${username}`);
         router.push("/");
       } else {
-        alert("Login failed. Invalid credentials.");
+        setMessage("Login failed. Invalid credentials.");
       }
     } catch (error) {
       console.error("Error logging in:", error);
+      setMessage("Error loggin in. Please try again later.")
     }
   };
 
@@ -39,6 +41,7 @@ const Login = () => {
           <h1 className="text-2xl font-semibold mb-4 text-center text-hampirbiru">
             Login
           </h1>
+          {message && <p className="text-red-500">{message}</p>}
           <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label
