@@ -30,7 +30,7 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Error logging in:", error);
-      setMessage("Login gagal")
+      setMessage("Error loggin in. Please try again.")
     }
   };
 
