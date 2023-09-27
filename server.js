@@ -167,7 +167,7 @@ const movies = [
     sutradara: "Michael Chaves",
     penulis: "Ian Goldberg, Richard Naing, Akela Cooper",
     produksi: "Warner Bros. Pictures",
-    casts: "Taissa Farmiga, Anna Popplewell, Bonnie Aarons",
+    casts: "Taissa Farmiga, Anna Popplewell, Bonnie Aarons.",
     sinopsis:
       "Berlatar tahun 1956, bermula dari pembunuhan seorang pendeta, Suster Irene (Taissa Farmiga) sekali lagi berhadapan dengan kekuatan jahat yang sangat besar, Valak sang biarawati iblis demi kedamaian hidupnya serta orang-orang di sekitarnya.",
   },
