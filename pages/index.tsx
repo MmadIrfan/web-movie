@@ -75,7 +75,7 @@ export default function Home() {
           Now Playing
         </span>
       </div>
-      <div className="mt-8 py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="mt-8 py-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {nowPlaying.map((movie) => (
           <div
             className="font-semibold p-2 hover:text-birumuda"
@@ -100,7 +100,7 @@ export default function Home() {
           Upcoming
         </span>
       </div>
-      <div className="mt-8 py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="mt-8 py-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {upComing.map((movie) => (
           <div className="font-semibold p-2 hover:text-birumuda" key={movie.id}>
             <Link href={`/detail?id=${movie.id}`}>
